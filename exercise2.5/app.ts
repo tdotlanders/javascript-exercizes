@@ -26,12 +26,12 @@ type Order = {
     name: string;
     email: string;
   };
-  price:{
-    amount:number;
-    currency:string;
+  price: {
+    amount: number;
+    currency: string;
+  };
+  isShipped: boolean;
+  products: string[];
+};
 
-  }
-  isShipped: boolean
-  products: string[]
-  
 console.log(formattedPrice);

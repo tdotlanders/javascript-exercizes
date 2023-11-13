@@ -1,7 +1,7 @@
 const value = "€ 11.23";
 
-//const currencySymbol = value.charAt(0);
-//const number = value.slice(2);
+// const currencySymbol = value.charAt(0);
+// const number = value.slice(2);
 
 // const splitValue = value.split(" ");
 // const [currencySymbol, strNumber] = splitValue;
@@ -14,7 +14,7 @@ const value = "€ 11.23";
 //   "£": "GBP",
 // };
 
-//console.log(symbolToCurrency);
+// console.log(symbolToCurrency);
 
 function convertPrice(
   value: number,
