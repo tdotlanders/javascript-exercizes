@@ -79,10 +79,11 @@ console.log(valuePerCurrency)
 const orderToClone = getOrder('A234')
 let count = 1 
 
-while (count<=4
+while (count<=4)
     {
 
 orders.push(orderToClone)
 count += 1
 }
+console.table(orders)
 
