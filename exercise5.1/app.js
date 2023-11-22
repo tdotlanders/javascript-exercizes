@@ -22,8 +22,29 @@ for (const order of orders) {
 
   id.textContent = order.id;
   status.textContent = order.status;
-  products.textContent = order.products.join();
+  // products.textContent = order.products.join();
 
+  if (order.status === "cancelled") {
+    status.style.backgroundColor = "red";
+  }
+  if (order.status === "processing") {
+    status.style.backgroundColor = "orange";
+  }
+  if (order.status === "draft") {
+    status.style.backgroundColor = "blue";
+  }
+  if (order.status === "shipped") {
+    status.style.backgroundColor = "green";
+  }
+
+  const productsUl = document.createElement("ul");
+  for (const product of order.products) {
+    const li = document.createElement("li");
+
+    li.textContent = product;
+    productsUl.appendChild(li);
+  }
+  products.appendChild(productsUl);
   orderRow.appendChild(id);
   orderRow.appendChild(status);
   orderRow.appendChild(products);
