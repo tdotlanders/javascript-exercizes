@@ -1,10 +1,8 @@
-import "styles.css";
+let indexer = 1;
 
-let indexer = -1;
+const slideNodes = document.querySelectorAll(".slide");
 
-const slideNodes = document.querySelectorAll(".slides");
-
-const slideArray = { ...slideNodes };
+const slideArray = [...slideNodes];
 
 function getActiveIndex() {
   return slideArray.findIndex((slideNode) =>
@@ -27,9 +25,23 @@ function getNextSlide() {
 
 function executeSlideshow() {
   const currentSlide = slideNodes[getActiveIndex()];
+
   const nextSlide = getNextSlide();
 
   currentSlide.classList.remove("active");
   nextSlide.classList.add("active");
 }
 setInterval(executeSlideshow, 2000);
+
+const pauseButton = document.querySelector("#pauseBtn");
+const playButton = document.querySelector("#playBtn");
+const autoPlayButton = document.querySelector("#autoPlayBtn");
+
+pauseButton.addEventListener("click", () => {
+  clearInterval(autoPlayerInterval);
+  autoPlayerInterval = undefined;
+});
+playButton.addEventListener("click", () => {
+  executeSlideshow();
+});
+ autoPlayButton.addEventListener('click', () =>
